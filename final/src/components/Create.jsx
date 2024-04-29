@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import './Create.css';
 import { supabase } from '/home/nievess10/Documents/finalproject2/final-project-Nievess10-1/final/src/client.js';
 
+
 const Create = ({
   allInputs,
   onInput,
@@ -15,7 +16,12 @@ const Create = ({
     const { data, error } = await supabase
       .from("Posts")
       .insert([
-        { title: allInputs[0], content: allInputs[1], image: allInputs[2] },
+        { 
+          title: allInputs[0], 
+          content: allInputs[1], 
+          image: allInputs[2],
+          created_at: new Date().toISOString()
+        }
       ])
       .single(); // This ensures you're handling a single insertion as a transaction
 

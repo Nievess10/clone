@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -70,10 +70,10 @@ const Post = ({
       </header>
       <section className="post-container">
         <p>
-          Posted{' '}
-          {postInfo['created_date'] +
+          Posted on{' '}
+          {new Date(postInfo['created_at']).toLocaleDateString() +
             ' ' +
-            postInfo['created_time'].slice(0, 8)}
+          new Date(postInfo['created_at']).toLocaleTimeString()}
         </p>
         <h3>{postInfo.title}</h3>
         <p>{postInfo.content}</p>

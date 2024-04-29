@@ -1,6 +1,5 @@
 body::before {
   content: "";
-  background-image: url('C:\Users\Miguel\Documents\GitHub\final-project-MiguelNievesH\src\assets\Stars-Shining-Depths-official-wallpaper-genshin.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;
